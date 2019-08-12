@@ -1,0 +1,17 @@
+{
+    "properties": {
+        "arek": {
+            "type": "string",
+            "description": "The arek of the component.",
+            "default": "aaaabbbb",
+            "$default": {
+              "$source": "argv",
+              "index": 0
+            },
+            "x-prompt": "What arek would you like to use for the component?"
+        }
+    },
+    "required": [
+        "arek"
+    ]
+}
