@@ -1,4 +1,13 @@
-do ```npm run build``` to compile
+add ```@angular-devkit/schematics-cli``` globally with  
+npm: ```npm install -g @angular-devkit/schematics-cli``` or  
+yarn: ```yarn global add @angular-devkit/schematics-cli```,  
+do ```npm run build``` to compile,  
+then:  
+```schematics .:h```  
+```schematics ./src/collection.json:h```  
+to execute, or without alias:  
+```schematics .:hello-world```  
+```schematics ./src/collection.json:hello-world```
 
 # Getting Started With Schematics
 
