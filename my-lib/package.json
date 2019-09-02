@@ -1,5 +1,16 @@
 {
   "name": "my-lib",
   "version": "0.0.1",
+  "scripts": {
+    "build": "../node_modules/.bin/tsc -p tsconfig.schematics.json",
+    "copy:schemas": "%SystemDrive%\\\"Program Files\"\\Git\\usr\\bin\\cp --parents schematics/*/schema.json ../dist/my-lib/",
+    "copy:files": "%SystemDrive%\\\"Program Files\"\\Git\\usr\\bin\\cp --parents -p schematics/*/files/** ../dist/my-lib/",
+    "copy:collection": "%SystemDrive%\\\"Program Files\"\\Git\\usr\\bin\\cp schematics/collection.json ../dist/my-lib/schematics/collection.json",
+    "postbuild": "npm run copy:schemas && npm run copy:files && npm run copy:collection"
+  },
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0"
+  },
   "schematics": "./schematics/collection.json"
 }
