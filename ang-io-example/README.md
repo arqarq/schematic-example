@@ -1,3 +1,15 @@
+in ```ang-io-example```:  
+```ng build my-lib```,  
+```cd projects\my-lib```,  
+```npm run build``` or ```yarn build```,  
+```cd ..\..```,  
+```npm link dist/my-lib```,  
+```ng generate my-lib:my-service --name my-data```,  
+```npm unlink --no-save dist\my-lib```,  
+```cd dist\my-lib```,  
+```npm unlink --no-save```,  
+```cd ..\..```
+
 # AngIoExample
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.0-next.2.
