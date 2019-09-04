@@ -3,20 +3,27 @@ import { BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/ar
 import * as childProcess from 'child_process';
 
 interface Options extends JsonObject {
-  command: string;
-  args: string[];
+  command: string
+  args: string[]
 }
 
-export default createBuilder(_commandBuilder);
+export default createBuilder(_commandBuilder)
 
 function _commandBuilder(
   options: Options,
   context: BuilderContext
 ): Promise<BuilderOutput> {
-  const child = childProcess.spawn(options.command, options.args);
-  return new Promise<BuilderOutput>(resolve => {
-    child.on('close', (code) => {
-      resolve({success: code === 0});
-    });
+  context.reportStatus(`Executing "${options.command}"...`);
+  const child = childProcess.spawn(options.command, options.args, {stdio: 'pipe'});
+  child.stdout.on('data', (dat) => {
+    context.logger.info(dat.toString())
   });
+  child.stderr.on('data', (dat) => {
+    context.logger.error(dat.toString())
+  });
+  return new Promise<BuilderOutput>((resolve) => {
+    child.on('close', (code) => {
+      resolve({success: code === 0})
+    })
+  })
 }
