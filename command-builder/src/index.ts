@@ -16,7 +16,7 @@ function _commandBuilder(
   return new Promise<BuilderOutput>((resolve, reject) => {
     context.reportStatus(`Executing "${options.command}"...`);
     context.reportProgress(2, 8, 'status_test');
-    const child = childProcess.spawn(options.command, options.args);
+    const child = childProcess.spawn(options.command, options.args, {stdio: 'pipe'});
     child.stdout.on('data', (dat) => {
       context.logger.info(dat.toString())
     });
