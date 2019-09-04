@@ -13,17 +13,20 @@ function _commandBuilder(
   options: Options,
   context: BuilderContext
 ): Promise<BuilderOutput> {
-  context.reportStatus(`Executing "${options.command}"...`);
-  const child = childProcess.spawn(options.command, options.args, {stdio: 'pipe'});
-  child.stdout.on('data', (dat) => {
-    context.logger.info(dat.toString())
-  });
-  child.stderr.on('data', (dat) => {
-    context.logger.error(dat.toString())
-  });
-  return new Promise<BuilderOutput>((resolve) => {
+  return new Promise<BuilderOutput>((resolve, reject) => {
+    context.reportStatus(`Executing "${options.command}"...`);
+    context.reportProgress(2, 8, 'status_test');
+    const child = childProcess.spawn(options.command, options.args);
+    child.stdout.on('data', (dat) => {
+      context.logger.info(dat.toString())
+    });
+    child.stderr.on('data', (dat) => {
+      context.logger.error(dat.toString());
+      reject()
+    });
+    context.reportStatus('Done.');
     child.on('close', (code) => {
       resolve({success: code === 0})
-    })
+    });
   })
 }

@@ -1,9 +1,19 @@
 {
-  "name": "@example/command-runner",
-  "version": "1.0.0",
+  "name": "@arqarq/command-runner-example",
+  "version": "1.0.13",
   "description": "Builder for Command Runner",
   "builders": "builders.json",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "tsc src/index.ts"
+  },
   "devDependencies": {
-    "@angular-devkit/architect": "^0.900.0-next.2"
+    "@angular-devkit/architect": "^0.803.2",
+    "@types/jasmine": "^3.4.0",
+    "@types/node": "^12.7.4",
+    "jasmine": "^3.4.0",
+    "jasmine-node": "^3.0.0",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.6.2"
   }
 }

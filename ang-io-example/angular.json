@@ -117,6 +117,17 @@
               "devServerTarget": "ang-io-example:serve:production"
             }
           }
+        },
+        "touch": {
+          "builder": "@arqarq/command-runner-example:commands",
+          "options": {
+            "command": "cmd",
+            "args": [
+              "/c",
+              "type",
+              "touch_test.txt"
+            ]
+          }
         }
       }
     },

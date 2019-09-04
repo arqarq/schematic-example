@@ -1,3 +1,4 @@
+**Library with schematic**  
 in ```ang-io-example```:  
 ```ng build my-lib```,  
 ```cd projects\my-lib```,  
@@ -9,6 +10,9 @@ in ```ang-io-example```:
 ```cd dist\my-lib```,  
 ```npm unlink --no-save```,  
 ```cd ..\..```
+
+**CLI builders**  
+`ng run ang-io-example:touch` or `yarn t`
 
 # AngIoExample
 
