@@ -3,6 +3,8 @@ import { TestingArchitectHost } from '@angular-devkit/architect/testing';
 // Our builder forwards the STDOUT of the command to the logger.
 import { logging, schema } from '@angular-devkit/core';
 
+const {join: join} = require('path');
+
 describe('Command Runner Builder', () => {
   let architect: Architect;
   let architectHost: TestingArchitectHost;
@@ -18,7 +20,8 @@ describe('Command Runner Builder', () => {
 
     // This will either take a Node package name, or a path to the directory
     // for the package.json file.
-    await architectHost.addBuilderFromPackage('..');
+    await architectHost.addBuilderFromPackage(join(__dirname, '..'));
+    console.log('#', Array.from((architectHost as any)._builderMap.keys()));
   });
 
   // This might not work in Windows.
@@ -29,13 +32,9 @@ describe('Command Runner Builder', () => {
     logger.subscribe(ev => logs.push(ev.message));
 
     // A "run" can have multiple outputs, and contains progress information.
-    const run = await architect.scheduleBuilder('@arqarq/command-runner-example', {
+    const run = await architect.scheduleBuilder('@arqarq/command-runner-example:commands', {
       command: 'cmd',
-      args: [
-        "/c",
-        "type",
-        "touch_test.txt"
-      ]
+      args: ['/c', 'type', 'touch_test.txt']
     }, {logger});  // We pass the logger for checking later.
 
     // The "result" member (of type BuilderOutput) is the next output.
@@ -51,6 +50,6 @@ describe('Command Runner Builder', () => {
 
     // Expect that this file was listed. It should be since we're running
     // `ls $__dirname`.
-    expect(logs).toContain('ABC');
+    expect(logs.toString()).toContain('ABC');
   });
 });

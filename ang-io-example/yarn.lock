@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@angular-devkit/architect@0.803.3":
+"@angular-devkit/architect@0.803.3", "@angular-devkit/architect@^0.803.3":
   version "0.803.3"
   resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.803.3.tgz#9d8a0733927201c64c17af034636af024ede7e47"
   integrity sha512-PInK3JTLZ+r/3MK52rocD0IwmxKVULnoed4XuxdklD1zh7e7Aj9WIoTGdVgzaTwdUFaeuBdAy4UqwfhHEmn5MQ==
@@ -222,9 +222,11 @@
     tslib "^1.9.0"
 
 "@arqarq/command-runner-example@^1.0.0":
-  version "1.0.14"
-  resolved "https://registry.yarnpkg.com/@arqarq/command-runner-example/-/command-runner-example-1.0.14.tgz#ac14e1e32f1b54b7432ac9cd019dc2333a07b4bc"
-  integrity sha512-D37LL1MA1aTrEq6gfqWgnLfdybfDmZ0kcHse2xmqlbrHmR6dPzA+69S0QGFdExyrxJlhH6OXJX0zO6bD7v1oxQ==
+  version "1.0.19"
+  resolved "https://registry.yarnpkg.com/@arqarq/command-runner-example/-/command-runner-example-1.0.19.tgz#98d0d847193ca5940729dd4159db31c3b0f51ddf"
+  integrity sha512-seVj4scP6evkvv9sBF+hAVpT51pdPYBTGmtoYhjNVRLgh+D63R58px1EMWXgEmINxTZUPL+gvkpf3DIKWW5Qdg==
+  dependencies:
+    "@angular-devkit/architect" "^0.803.3"
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.5.5":
   version "7.5.5"
@@ -2627,10 +2629,10 @@ custom-event@~1.0.0:
   resolved "https://registry.yarnpkg.com/custom-event/-/custom-event-1.0.1.tgz#5d02a46850adf1b4a317946a3928fccb5bfd0425"
   integrity sha1-XQKkaFCt8bSjF5RqOSj8y1v9BCU=
 
-cyclist@~0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-0.2.2.tgz#1b33792e11e914a2fd6d6ed6447464444e5fa640"
-  integrity sha1-GzN5LhHpFKL9bW7WRHRkRE5fpkA=
+cyclist@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-1.0.1.tgz#596e9698fd0c80e12038c2b82d6eb1b35b6224d9"
+  integrity sha1-WW6WmP0MgOEgOMK4LW6xs1tiJNk=
 
 damerau-levenshtein@^1.0.4:
   version "1.0.5"
@@ -5916,11 +5918,11 @@ pako@~1.0.2, pako@~1.0.5:
   integrity sha512-0DTvPVU3ed8+HNXOu5Bs+o//Mbdj9VNQMUOe9oKCwh8l0GNwpTDMKCWbRjgtD291AWnkAgkqA/LOnQS8AmS1tw==
 
 parallel-transform@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/parallel-transform/-/parallel-transform-1.1.0.tgz#d410f065b05da23081fcd10f28854c29bda33b06"
-  integrity sha1-1BDwZbBdojCB/NEPKIVMKb2jOwY=
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/parallel-transform/-/parallel-transform-1.2.0.tgz#9049ca37d6cb2182c3b1d2c720be94d14a5814fc"
+  integrity sha512-P2vSmIu38uIlvdcU7fDkyrxj33gTUy/ABO5ZUbGowxNCopBq/OoD42bP4UmMrJoPyk4Uqf0mu3mtWBhHCZD8yg==
   dependencies:
-    cyclist "~0.2.2"
+    cyclist "^1.0.1"
     inherits "^2.0.3"
     readable-stream "^2.1.5"
 
