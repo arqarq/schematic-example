@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "t": "ng run ang-io-example:touch"
+    "t": "ng run ang-io-example:touch",
+    "t_alt": "ng run ang-io-example:touch:alt"
   },
   "private": true,
   "dependencies": {

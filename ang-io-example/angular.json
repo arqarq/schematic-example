@@ -127,6 +127,15 @@
               "type",
               "touch_test.txt"
             ]
+          },
+          "configurations": {
+            "alt": {
+              "args": [
+                "/c",
+                "type",
+                "touch_test2.txt"
+              ]
+            }
           }
         }
       }
