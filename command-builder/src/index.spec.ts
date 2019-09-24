@@ -3,7 +3,7 @@ import { TestingArchitectHost } from '@angular-devkit/architect/testing';
 // Our builder forwards the STDOUT of the command to the logger.
 import { logging, schema } from '@angular-devkit/core';
 
-const {join: join} = require('path');
+const {join: joinn} = require('path'); // destructure ze zmianą nazwy to jest!
 
 describe('Command Runner Builder', () => {
   let architect: Architect;
@@ -20,7 +20,7 @@ describe('Command Runner Builder', () => {
 
     // This will either take a Node package name, or a path to the directory
     // for the package.json file.
-    await architectHost.addBuilderFromPackage(join(__dirname, '..'));
+    await architectHost.addBuilderFromPackage(joinn(__dirname, '..'));
     console.log('#', Array.from((architectHost as any)._builderMap.keys()));
   });
 
