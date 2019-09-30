@@ -179,6 +179,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "ang-io-example"
 }
